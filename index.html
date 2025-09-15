@@ -7,98 +7,130 @@
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
 
   <style>
-    body {
-      margin: 0;
-      font-family: "Playfair Display", sans-serif;
-      background-size: cover;
-      color: #111;
-      height: 100vh;
-      box-sizing: border-box;
-      overflow: hidden;
-    }
-.menu-heading {
-  font-size: 0.95rem;   /* bigger than the list */
-  font-weight: normal; /* keeps it elegant */
-  color: #1e1e1e;         /* same grey tone as links */
-  margin-bottom: 6px; /* more spacing above the list */
+body {
+  margin: 0;
+  font-family: "Playfair Display", sans-serif;
+  background-size: cover;
+  color: #111;
+  height: 100vh;
+  box-sizing: border-box;
+  overflow: hidden;
 }
-    #bg-video {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
-      object-fit: cover;
-      z-index: -1;
-    }
 
-    /* Fixed container at bottom right */
-    .content-wrapper {
-      position: fixed;
-      bottom: 40px;
-      right: 60px;
-      max-width: 300px;
-      text-align: right;
-      font-size: 0.9rem; /* smaller font size */
-      line-height: 1.0;   /* slightly tighter */
-      color: #222;
-      background-color: transparent;
-      display: flex;
-      flex-direction: column;
-      align-items: flex-end;
-    }
+.menu-heading {
+  font-size: 0.95rem;
+  font-weight: normal;
+  color: #1e1e1e;
+  margin-bottom: 6px;
+}
 
-    /* Scrollable menu */
-    .menu {
-      max-height: 190px; /* restrict height */
-      overflow-y: auto;  /* scroll if content exceeds height */
-      margin-bottom: 0px;
-      width: 100%;
-    }
+#bg-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  z-index: -1;
+  pointer-events: none;
+}
 
-    ul.project-list {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
+.content-wrapper {
+  position: fixed;
+  bottom: 40px;
+  right: 60px;
+  max-width: 300px;
+  text-align: right;
+  font-size: 0.9rem;
+  line-height: 1.0;
+  color: #222;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
 
-    ul.project-list li {
-      margin-bottom: 3px; /* tighter spacing */
-    }
+.menu {
+  max-height: 190px;
+  overflow-y: auto;
+  margin-bottom: 0px;
+  width: 100%;
+}
 
-    ul.project-list li a {
-      text-decoration: none;
-      font-size: 0.9rem;
-      color: #222;
-      border-bottom: 1px solid transparent;
-      transition: border-color 0.25s ease, color 0.25s ease;
-      padding-bottom: 0px;
-      display: inline-block;
-    }
+ul.project-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
 
-    ul.project-list li a:hover,
-    ul.project-list li a:focus {
-      color: #0077cc;
-      border-color: #0077cc;
-      outline: none;
-    }
+ul.project-list li {
+  margin-bottom: 3px;
+}
 
-    /* Bio / contact info pinned below menu */
-    .contact-info {
-      font-size: 0.9rem;
-      text-align: right;
-      margin-top: 0px;
-    }
+ul.project-list li a {
+  text-decoration: none;
+  font-size: 0.9rem;
+  color: #222;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.25s ease, color 0.25s ease;
+  display: inline-block;
+}
 
-    .contact-info a {
-      color: #222;
-      text-decoration: none;
-    }
+ul.project-list li a:hover,
+ul.project-list li a:focus {
+  color: #0077cc;
+  border-color: #0077cc;
+  outline: none;
+}
 
-    .contact-info a:hover {
-      color: #0077cc;
-    }
-  </style>
+.contact-info {
+  font-size: 0.9rem;
+  text-align: right;
+  margin-top: 0px;
+}
+
+.contact-info a {
+  color: #222;
+  text-decoration: none;
+}
+
+.contact-info a:hover {
+  color: #0077cc;
+}
+
+/* MOBILE RESPONSIVENESS */
+@media screen and (max-width: 768px) {
+  #bg-video {
+    object-fit: contain;
+  }
+
+  .content-wrapper {
+    bottom: 20px;
+    right: 10px;
+    max-width: 90%;
+    font-size: 1.2rem; /* larger font for mobile */
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  ul.project-list li a {
+    font-size: 1.2rem;
+  }
+
+  .menu-heading {
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+  }
+
+  .contact-info {
+    font-size: 1.2rem;
+  }
+
+  .menu {
+    max-height: 50vh; /* taller scrollable menu on mobile */
+  }
+}
+</style>
+
 </head>
 <body>
 
