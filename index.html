@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Adrian Q Vardi</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: "Playfair Display", sans-serif;
+      background-size: cover;
+      color: #111;
+      height: 100vh;
+      box-sizing: border-box;
+      overflow: hidden;
+    }
+.menu-heading {
+  font-size: 0.95rem;   /* bigger than the list */
+  font-weight: normal; /* keeps it elegant */
+  color: #1e1e1e;         /* same grey tone as links */
+  margin-bottom: 6px; /* more spacing above the list */
+}
+    #bg-video {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      object-fit: cover;
+      z-index: -1;
+    }
+
+    /* Fixed container at bottom right */
+    .content-wrapper {
+      position: fixed;
+      bottom: 40px;
+      right: 60px;
+      max-width: 300px;
+      text-align: right;
+      font-size: 0.9rem; /* smaller font size */
+      line-height: 1.0;   /* slightly tighter */
+      color: #222;
+      background-color: transparent;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+    }
+
+    /* Scrollable menu */
+    .menu {
+      max-height: 190px; /* restrict height */
+      overflow-y: auto;  /* scroll if content exceeds height */
+      margin-bottom: 0px;
+      width: 100%;
+    }
+
+    ul.project-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    ul.project-list li {
+      margin-bottom: 3px; /* tighter spacing */
+    }
+
+    ul.project-list li a {
+      text-decoration: none;
+      font-size: 0.9rem;
+      color: #222;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.25s ease, color 0.25s ease;
+      padding-bottom: 0px;
+      display: inline-block;
+    }
+
+    ul.project-list li a:hover,
+    ul.project-list li a:focus {
+      color: #0077cc;
+      border-color: #0077cc;
+      outline: none;
+    }
+
+    /* Bio / contact info pinned below menu */
+    .contact-info {
+      font-size: 0.9rem;
+      text-align: right;
+      margin-top: 0px;
+    }
+
+    .contact-info a {
+      color: #222;
+      text-decoration: none;
+    }
+
+    .contact-info a:hover {
+      color: #0077cc;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Video background element -->
+  <video autoplay muted loop playsinline id="bg-video">
+    <source src="Videos/webbgfin.mp4" type="video/mp4" />
+    Your browser does not support the video tag.
+  </video>
+
+  <!-- Fixed content at bottom right -->
+  <div class="content-wrapper">
+    <!-- Scrollable menu -->
+       <div class="menu-heading">Adrian Q. Vardi</div>
+
+    <div class="menu">
+
+      <ul class="project-list">
+
+        <li><a href="project1.html">untitled (gesture)</a></li>
+        <li><a href="project2.html">Intermezzo of Elysian Chants</a></li>
+        <li><a href="project3.html">Empire of Absence</a></li>
+        <li><a href="project4.html">Mies or a Crippled Symmetry</a></li>
+        <li><a href="project5.html">Deadlocked Phoenix</a></li>
+        <li><a href="project6.html">Shostagotchi</a></li>
+        <li><a href="project7.html">Hello, my name is...</a></li>
+        <li><a href="project8.html">Shaped by you,</a></li>
+        <li><a href="project10.html">As you wake up in the morning</a></li>
+        <li><a href="project9.html">Der Spieler</a></li>
+
+      </ul>
+    </div>
+
+    <!-- Bio / contact info pinned below menu -->
+    <div class="contact-info">
+      <a href="bio.html">Bio</a><br>
+      ✉️ <a href="mailto:qvardi@gmail.com">qvardi@gmail.com</a>
+    </div>
+  </div>
+
+ 
+
+</body>
+</html>
