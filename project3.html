@@ -1,74 +1,131 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Empire of Absence</title>
-  <link rel="stylesheet" href="style.css">
-  <style>
-    .installation-pic {
-      width: 60%;
-      max-width: 1200px;
-      height: auto;
-      display: block;
-      margin: 20px auto;
+<title>Empire of Absence</title>
+<link rel="stylesheet" href="style.css">
+<style>
+  /* Main content container */
+  .main-content {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+  }
+
+  /* Hero image */
+  #bg-image {
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+  }
+
+  /* Bottom right header */
+  .bottom-right-title {
+    position: absolute;
+    bottom: 20px;
+    right: 40px;
+    font-size: 1.4rem;
+    color: white;
+    margin: 0;
+    text-shadow: 2px 2px 3px rgba(0,0,0,0.4);
+    max-width: 90%;
+    word-wrap: break-word;
+    text-align: right;
+  }
+
+  /* Page content container */
+  .page-content-dark {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+    font-size: 1rem;
+    line-height: 1.4;
+    box-sizing: border-box;
+    text-align: center;
+    color: white;
+  }
+
+  .installation-pic {
+    width: 60%;
+    max-width: 1200px;
+    height: auto;
+    display: block;
+    margin: 20px auto;
+  }
+
+  .video-container {
+    max-width: 900px;
+    margin: 2rem auto;
+  }
+
+  .video-container iframe {
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 16/9;
+  }
+
+  /* Mobile adjustments */
+  @media (max-width: 768px) {
+    .bottom-right-title {
+      font-size: 1.2rem;
+      right: 20px;
+      bottom: 15px;
+      text-align: center;
     }
-
     .page-content-dark {
-      text-align: center; /* centers text */
-      max-width: 800px;   /* keeps nice readable width */
-      margin: 0 auto;
-      padding: 2rem;
+      font-size: 0.95rem;
+      padding: 1.5rem 1rem;
     }
+    .installation-pic {
+      width: 80%;
+    }
+  }
 
-    @media (max-width: 768px) {
-      .bottom-right-title {
-        font-size: 1.2rem;
-        text-align: center;
-        position: absolute;
-        right: 20px;
-        bottom: 15px;
-      }
-      .page-content-dark {
-        font-size: 0.95rem;
-        padding: 1.5rem 1rem;
-      }
-      .installation-pic {
-        width: 80%;
-      }
+  @media (max-width: 480px) {
+    .bottom-right-title {
+      font-size: 1.1rem;
+      right: 10px;
+      bottom: 10px;
+      text-align: center;
     }
+    .page-content-dark {
+      font-size: 0.9rem;
+      padding: 1rem 0.5rem;
+    }
+    .installation-pic {
+      width: 100%;
+    }
+  }
 
-    @media (max-width: 480px) {
-      .bottom-right-title {
-        font-size: 1.1rem;
-        right: 10px;
-        bottom: 10px;
-      }
-      .page-content-dark {
-        font-size: 0.9rem;
-        padding: 1rem 0.5rem;
-      }
-      .installation-pic {
-        width: 100%;
-      }
-    }
-  </style>
+  /* Remove default spacing of page content */
+  .page-content {
+    margin: 0;
+    padding: 0;
+    background: black; /* keep black background */
+  }
+</style>
 </head>
 <body>
 
-  <!-- Back button -->
-  <a href="index.html" class="back-button-black"></a>
+<!-- Back button -->
+<a href="index.html" class="back-button-black"></a>
 
-  <!-- Hero section -->
-  <section class="main-content">
-    <img src="images/draft.png" alt="Empire of Absence, 2023" id="bg-image">
-    <h1 class="bottom-right-title">Empire of Absence, 2023</h1>
-  </section>
+<!-- Hero section -->
+<section class="main-content">
+  <img src="images/draft.png" alt="Empire of Absence, 2023" id="bg-image">
+  <h1 class="bottom-right-title">Empire of Absence, 2023</h1>
+</section>
 
-  <!-- Text content -->
-  <section class="page-content">
-    <div class="page-content-dark"> 
+<!-- Text content -->
+<section class="page-content">
+  <div class="page-content-dark"> 
+    <p>
       <em>Empire of Absence</em> is a proposal for a card game of 40 cards. It places players in the roles of art collectors striving to build a collection of valuable works while evading tax authorities. They do so by storing their acquisitions in Freeports.<br><br>
 
       Freeports are free trade zones with state of the art security and storage facilities, where collectors keep artworks to defer customs duties or taxes until the pieces are sold or transported out of the Freeport. The irony of the game is that once a piece is acquired, the goal is not to show it but to hide it. Winner is the player who, after the final auction, has managed to place the most works into their Freeport.<br><br>
@@ -76,21 +133,22 @@
       This pursuit is frequently interrupted by events that simulate the unpredictable developments of the art market. Whether navigating museum exhibitions, facing scandals, or confronting the specter of theft, players move through a world of ambition, intrigue, and risk.<br><br>
 
       Demonstration:
-    </div>
+    </p>
+  </div>
 
-    <!-- Video -->
-    <div class="video-container">
-      <iframe 
-          src="https://www.youtube.com/embed/Wr2roF6jyWA" 
-          title="YouTube video player" 
-          frameborder="0" 
-          allowfullscreen>
-      </iframe>
-    </div>
- 
-    <!-- Installation Image -->
-    <img src="images/Screenshot 2025-09-08 at 17.00.18.png" alt="Installation 1" class="installation-pic"/>
-  </section>
+  <!-- Video -->
+  <div class="video-container">
+    <iframe 
+        src="https://www.youtube.com/embed/Wr2roF6jyWA" 
+        title="YouTube video player" 
+        frameborder="0" 
+        allowfullscreen>
+    </iframe>
+  </div>
+
+  <!-- Installation Image -->
+  <img src="images/Screenshot 2025-09-08 at 17.00.18.png" alt="Installation 1" class="installation-pic"/>
+</section>
 
 </body>
 </html>
