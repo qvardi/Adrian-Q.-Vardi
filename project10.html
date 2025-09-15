@@ -18,6 +18,15 @@
     font-family: Arial, sans-serif;
   }
 
+  /* Back button */
+  .back-button {
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    width: 30px;
+    height: 30px;
+    z-index: 10;
+  }
 
   /* First screen video */
   .main-content {
@@ -64,12 +73,17 @@
     margin-bottom: 20px;
   }
 
-  /* Images */
-  .page-content-inner-bright img {
-    width: 100%;
-    height: auto;
-    display: block;
+  /* Images container */
+  .img-container {
+    text-align: center;
     margin: 20px 0;
+  }
+
+  .img-container img {
+    max-width: 100%;
+    height: auto;
+    display: inline-block;
+    margin: 10px 0;
   }
 
   /* Video container responsive */
@@ -124,6 +138,7 @@
 <section class="main-content">
   <video autoplay muted loop playsinline id="bg-video">
     <source src="Videos/as you.mp4" type="video/mp4">
+    <source src="Videos/as you_mobile.mp4" type="video/mp4" media="(max-width: 768px)">
     Your browser does not support the video tag.
   </video>
   <h1 class="bottom-right-title">As you wake up in the morning, 2020</h1>
@@ -157,7 +172,7 @@
   </div>
 
   <!-- Images -->
-  <div class="page-content-inner-bright img"> 
+  <div class="img-container"> 
     <img src="images/as.JPG" alt="Installation 1" />
     <img src="images/as2.JPG" alt="Installation 2" />
     <img src="images/as3.JPG" alt="Installation 3" />
@@ -165,6 +180,15 @@
     <img src="images/as5.JPG" alt="Installation 5" />
   </div>
 </section>
+
+<script>
+  // Swap to mobile video if screen width <= 768px
+  const bgVideo = document.getElementById('bg-video');
+  if (window.innerWidth <= 768) {
+    bgVideo.src = 'Videos/as you_mobile.mp4';
+    bgVideo.load();
+  }
+</script>
 
 </body>
 </html>
