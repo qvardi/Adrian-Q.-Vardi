@@ -1,80 +1,153 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Hello, my name is...</title>
-  <link rel="stylesheet" href="style.css">
-  <style>
-  
+<title>Hello, my name is...</title>
+<link rel="stylesheet" href="style.css">
+<style>
+  /* Main content container */
+  .main-content {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+  }
 
-    /* White section after video */
-    .page-content {
-      background: white;
-      color: black;
-      padding: 40px;
+  /* Background video */
+  #bg-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    z-index: -1;
+  }
+
+  /* Bottom right header */
+  .bottom-right-title {
+    position: absolute;
+    bottom: 20px;
+    right: 40px;
+    font-size: 1.4rem;
+    color: black;
+    margin: 0;
+    text-shadow: 1px 1px 2px rgba(255,255,255,0.6);
+    max-width: 90%;
+    word-wrap: break-word;
+    text-align: right;
+  }
+
+  /* Page content container */
+  .page-content-inner {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+    font-size: 1rem;
+    line-height: 1.4;
+    color: black;
+  }
+
+  .page-content-inner img {
+    width: 60%;
+    max-width: 1200px;
+    height: auto;
+    display: block;
+    margin: 20px auto;
+  }
+
+  .video-container {
+    max-width: 900px;
+    margin: 2rem auto;
+  }
+
+  .video-container iframe {
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 16/9;
+  }
+
+  /* Mobile adjustments */
+  @media (max-width: 768px) {
+    .bottom-right-title {
+      font-size: 1.2rem;
+      right: 20px;
+      bottom: 15px;
+      text-align: center;
     }
-
-     @media (max-width: 768px) {
-      .bottom-right-title {
-        font-size: 1.2rem;
-        right: 20px;
-        bottom: 15px;
-      }
-      .page-content-dark {
-        font-size: 0.95rem;
-        padding: 1.5rem 1rem;
-      }
-      .installation-pic {
-        width: 80%;
-      }
+    .page-content-inner {
+      font-size: 0.95rem;
+      padding: 1.5rem 1rem;
     }
+    .page-content-inner img {
+      width: 80%;
+    }
+  }
 
-    @media (max-width: 480px) {
-      .bottom-right-title {
-        font-size: 1.1rem;
-        right: 10px;
-        bottom: 10px;
-      }
-  </style>
+  @media (max-width: 480px) {
+    .bottom-right-title {
+      font-size: 1.1rem;
+      right: 10px;
+      bottom: 10px;
+      text-align: center;
+    }
+    .page-content-inner {
+      font-size: 0.9rem;
+      padding: 1rem 0.5rem;
+    }
+    .page-content-inner img {
+      width: 100%;
+    }
+  }
+
+  /* Page content background */
+  .page-content {
+    margin: 0;
+    padding: 0;
+    background: white;
+  }
+</style>
 </head>
 <body>
 
-  <!-- Back button -->
-  <a href="index.html" class="back-button-black"></a>
+<!-- Back button -->
+<a href="index.html" class="back-button-black"></a>
 
-  <!-- First screen with video -->
-  <section class="main-content">
-    <video autoplay muted loop playsinline id="bg-video">
-      <source src="Videos/hello.mp4" type="video/mp4">
-      <source src="Videos/hello_mobile.mp4" type="video/mp4" media="(max-width: 768px)">
-
-      Your browser does not support the video tag.
-    </video>
+<!-- First screen with video -->
+<section class="main-content">
+  <video autoplay muted loop playsinline id="bg-video">
+    <source src="Videos/hello.mp4" type="video/mp4">
+    <source src="Videos/hello_mobile.mp4" type="video/mp4" media="(max-width: 768px)">
+    Your browser does not support the video tag.
+  </video>
   <h1 class="bottom-right-title">Hello, my name is..., 2021</h1>
-   
-  </section>
+</section>
+
+<!-- Text content -->
 <section class="page-content">
+  <div class="page-content-inner">
+    <p>
+      <em>Hello, my name is…</em> is a 15 minute narrative short film about the daily routine of a virtual being working for an agency that promises to fulfill any wish.<br><br>
+      Throughout the story, the being encounters clients with very different desires: a manager who treats it as a product, a fashion designer who sees it as a muse, a lonely man searching for closeness, a transhumanist longing to become it, and finally its own exhausted creator.<br><br>
+      All roles are performed by me, tracing the shifting relations between the being and those who rely on it, until the being ultimately begins to produce itself.
+    </p>
 
-  <!-- White content section after scroll -->
+    <img src="images/1 (1).JPG" alt="Installation 1">
+    <img src="images/5.JPG" alt="Installation 2">
+    <img src="images/2.JPG" alt="Installation 3">
+    <img src="images/8.JPG" alt="Installation 4">
+  </div>
+</section>
 
-<p class="page-content-inner">
- 
-  <em>Hello, my name is…</em>
-  <span>is a 15 minute narrative short film about the daily routine of a virtual being working for an agency that promises to fulfill any wish.</span><br><br>
-  <span>Throughout the story, the being encounters clients with very different desires: a manager who treats it as a product, a fashion designer who sees it as a muse, a lonely man searching for closeness, a transhumanist longing to become it, and finally its own exhausted creator.</span><br><br>
-  <span>All roles are performed by me, tracing the shifting relations between the being and those who rely on it, until the being ultimately begins to produce itself.</span>
-
-
-
-
-    <img src="images/1 (1).JPG" alt="Installation 1" />
-    <img src="images/5.JPG" alt="Installation 2" />
-    <img src="images/2.JPG" alt="Installation 2" />
-    <img src="images/8.JPG" alt="Installation 2" />
-
-  </section>
+<script>
+  // Swap to mobile video if screen width <= 768px
+  const bgVideo = document.getElementById('bg-video');
+  if (window.innerWidth <= 768) {
+    bgVideo.src = 'Videos/hello_mobile.mp4';
+    bgVideo.load();
+  }
+</script>
 
 </body>
 </html>
