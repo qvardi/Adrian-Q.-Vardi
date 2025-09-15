@@ -10,6 +10,7 @@
     .main-content {
       position: relative;
       height: 100vh;
+      overflow: hidden;
     }
 
     /* Background video */
@@ -28,7 +29,7 @@
       position: absolute;
       bottom: 20px;
       right: 40px;
-      font-size: 1.6rem;
+      font-size: 1.4rem;
       color: white;
       margin: 0;
       text-shadow: 2px 2px 3px rgba(0,0,0,0.4);
@@ -37,18 +38,15 @@
       text-align: right;
     }
 
-    /* Page content */
-    .page-content {
-      background: black;
-      color: white;
-      padding: 2rem 1rem;
-    }
-
+    /* Page content container */
     .page-content-inner {
-      max-width: 800px;
+      max-width: 900px;
       margin: 0 auto;
+      padding: 1.5rem 1rem;
       font-size: 1rem;
-      line-height: 1.5;
+      line-height: 1.4;
+      box-sizing: border-box;
+      text-align: center; /* center text like Elysian Chants */
     }
 
     .page-content-inner img {
@@ -58,47 +56,35 @@
       margin-bottom: 1rem;
     }
 
-    .video-container {
-      position: relative;
-      padding-bottom: 56.25%; /* 16:9 */
-      height: 0;
-      overflow: hidden;
-      margin: 2rem 0;
-    }
-
-    .video-container iframe {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-    }
-
     /* Mobile adjustments */
     @media (max-width: 768px) {
       .bottom-right-title {
         font-size: 1.2rem;
         right: 20px;
         bottom: 15px;
-        text-align: center;
-        left: 0;
-        right: 0;
       }
-
       .page-content-inner {
         font-size: 0.95rem;
+        padding: 1rem 1rem;
       }
     }
 
     @media (max-width: 480px) {
       .bottom-right-title {
         font-size: 1.1rem;
+        right: 10px;
         bottom: 10px;
       }
-
       .page-content-inner {
         font-size: 0.9rem;
+        padding: 0.8rem 0.5rem;
       }
+    }
+
+    /* Remove default spacing of page content */
+    .page-content {
+      margin: 0;
+      padding: 0;
     }
   </style>
 </head>
@@ -116,24 +102,26 @@
     <h1 class="bottom-right-title">Deadlocked Phoenix, 2022</h1>
   </section>
 
-  <!-- Content -->
+  <!-- Content section after scroll -->
   <section class="page-content">
     <div class="page-content-inner">
-      <em>Deadlocked Phoenix</em> is a 9 minute 3D animated video loop created in the context of the 100th anniversary of the 1922 film Nosferatu: A Symphony of Horror. It reinterprets elements of the silent film genre through contemporary 3D animation, combining adapted motifs from the original with newly constructed digital scenes.<br><br>
+      <p>
+        <em>Deadlocked Phoenix</em> is a 9 minute 3D animated video loop created in the context of the 100th anniversary of the 1922 film Nosferatu: A Symphony of Horror. It reinterprets elements of the silent film genre through contemporary 3D animation, combining adapted motifs from the original with newly constructed digital scenes.<br><br>
 
-      An unnamed vampire, portrayed as the director of a museum, moves through a hall filled with AI generated Vanitas specimens including skulls, shark teeth, numerous drawings, and an ancient ginkgo tree. He repeatedly descends an endless spiral staircase. In the lobby, towers of unopened letters accumulate. Among them he notices a postcard depicting Arnold Böcklin’s Isle of the Dead. In one scene, he files down his own teeth in an attempt to break the curse of immortality, only for the loop to return him to a moment where another, transhumanist vampire inserts new teeth.<br><br>
+        An unnamed vampire, portrayed as the director of a museum, moves through a hall filled with AI generated Vanitas specimens including skulls, shark teeth, numerous drawings, and an ancient ginkgo tree. He repeatedly descends an endless spiral staircase. In the lobby, towers of unopened letters accumulate. Among them he notices a postcard depicting Arnold Böcklin’s Isle of the Dead. In one scene, he files down his own teeth in an attempt to break the curse of immortality, only for the loop to return him to a moment where another, transhumanist vampire inserts new teeth.<br><br>
 
-      The film unfolds as an infinite cycle without resolution. Sound by Chickenmilkdotcom combines environmental recordings with subtle foley, binding the vampire’s movements to the stillness of his surroundings.<br><br>
+        The film unfolds as an infinite cycle without resolution. Sound by Chickenmilkdotcom combines environmental recordings with subtle foley, binding the vampire’s movements to the stillness of his surroundings.<br><br>
 
-      The film was initially created as part of the Goethe Institutes program "Dèad, A set of Teeth" in Silent Green Berlin.
+        The film was initially created as part of the Goethe Institutes program "Dèad, A set of Teeth" in Silent Green Berlin.
+      </p>
     </div>
 
     <div class="video-container">
       <iframe 
-        src="https://www.youtube.com/embed/3owBTMDKF6Y?si=yncM5FaFEvKngi_7" 
-        title="YouTube video player" 
-        frameborder="0" 
-        allowfullscreen>
+          src="https://www.youtube.com/embed/3owBTMDKF6Y?si=yncM5FaFEvKngi_7" 
+          title="YouTube video player" 
+          frameborder="0" 
+          allowfullscreen>
       </iframe>
     </div>
 
