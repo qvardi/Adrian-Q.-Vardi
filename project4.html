@@ -1,67 +1,137 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
- <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Mies or A Crippled Symmetry</title>
-  <link rel="stylesheet" href="style.css">
- <style>  
-   /* Mobile adjustments */
-    @media (max-width: 768px) {
-      .bottom-right-title {
-        font-size: 1.2rem;
-        text-align: center;
-        position: absolute;
-        bottom: 10px;
-        right: 10px;
-      }
+<title>Mies or A Crippled Symmetry</title>
+<link rel="stylesheet" href="style.css">
+<style>
+  /* Main content container */
+  .main-content {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+  }
 
-      .page-content-inner {
-        font-size: 0.95rem;
-      }
-    }</style>
+  /* Background video */
+  #bg-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    z-index: -1;
+  }
+
+  /* Bottom right header */
+  .bottom-right-title {
+    position: absolute;
+    bottom: 20px;
+    right: 40px;
+    font-size: 1.4rem;
+    color: white;
+    margin: 0;
+    text-shadow: 2px 2px 3px rgba(0,0,0,0.4);
+    max-width: 90%;
+    word-wrap: break-word;
+    text-align: right;
+  }
+
+  /* Page content container */
+  .page-content-inner {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 1.5rem 1rem;
+    font-size: 1rem;
+    line-height: 1.4;
+    box-sizing: border-box;
+    text-align: center; /* center text like Elysian Chants */
+    color: white;
+  }
+
+  .page-content-inner img {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin-bottom: 1rem;
+  }
+
+  /* Mobile adjustments */
+  @media (max-width: 768px) {
+    .bottom-right-title {
+      font-size: 1.2rem;
+      right: 20px;
+      bottom: 15px;
+    }
+    .page-content-inner {
+      font-size: 0.95rem;
+      padding: 1rem 1rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .bottom-right-title {
+      font-size: 1.1rem;
+      right: 10px;
+      bottom: 10px;
+    }
+    .page-content-inner {
+      font-size: 0.9rem;
+      padding: 0.8rem 0.5rem;
+    }
+  }
+
+  /* Remove default spacing of page content */
+  .page-content {
+    margin: 0;
+    padding: 0;
+    background: black; /* keep black background */
+  }
+</style>
 </head>
 <body>
 
-  <!-- Back button -->
-  <a href="index.html" class="back-button-black"></a>
+<!-- Back button -->
+<a href="index.html" class="back-button-black"></a>
 
-  <!-- First screen with video -->
-  <section class="main-content">
-    <video autoplay muted loop playsinline id="bg-video">
-      <source src="Videos/Mies 2.mp4" type="video/mp4">
-      Your browser does not support the video tag.
-    </video>
+<!-- First screen with video -->
+<section class="main-content">
+  <video autoplay muted loop playsinline id="bg-video">
+    <source src="Videos/Mies 2.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
   <h1 class="bottom-right-title">Mies or A Crippled Symmetry, 2024</h1>
-   
-  </section>
+</section>
+
+<!-- Content section after scroll -->
 <section class="page-content">
+  <div class="page-content-inner">
+    <p>
+      <em>Mies or A Crippled Symmetry</em> is a 3D-animated 9 minute film set in a digital reconstruction of Ludwig Mies van der Rohe’s Barcelona Pavilion, originally built for the 1929 International Exposition and dismantled in 1930. The architecture was remodeled based on original blueprints.<br>
+      The film follows a digitally aged version of Mies, whose presence is rendered through blurred reflections and fragmented views, alternating between first-person perspective and external shots from low angles, ceilings, and windows.<br>
+      As he sits down, the building begins to collapse, and Mies falls into a bottomless pit. The camera enters his body, revealing an interior space composed of deformed fragments of the pavilion. Over time, these fragments slowly assemble into a new architectural structure.<br>
+      Sound design was developed by Chengchen Pan, focusing on haptic, close-range realism.<br><br>
+      The film was shown in several screenings and exhibitons, including the DFF (Deutsches Filminstitut & Filmmuseum), the Vietnam Art Collection (VAC), Kunsthalle Kassel and the GfZK Unlearning Digitalities program.
+    </p>
+  </div>
 
-  <!-- White content section after scroll -->
-
-<div class="page-content-inner">
-  <em>Mies or A Crippled Symmetry</em> is a 3D-animated 9 minute film set in a digital reconstruction of Ludwig Mies van der Rohe’s Barcelona Pavilion, originally built for the 1929 International Exposition and dismantled in 1930. The architecture was remodeled based on original blueprints.<br>
-  The film follows a digitally aged version of Mies, whose presence is rendered through blurred reflections and fragmented views, alternating between first-person perspective and external shots from low angles, ceilings, and windows.<br>
-  As he sits down, the building begins to collapse, and Mies falls into a bottomless pit. The camera enters his body, revealing an interior space composed of deformed fragments of the pavilion. Over time, these fragments slowly assemble into a new architectural structure.<br>
-  Sound design was developed by Chengchen Pan, focusing on haptic, close-range realism.<br>
-  <br>
-  The film was shown in several screenings and exhibitons, including the DFF (Deutsches Filminstitut & Filmmuseum), the Vietnam Art Collection (VAC), Kunsthalle Kassel and the GfZK Unlearning Digitalities program.
-</div>
   <div class="video-container">
-  <iframe 
-      src="https://www.youtube.com/embed/VNBqKmNATWg?si=gEyGksD5Viunx0OE" 
-      title="YouTube video player" 
-      frameborder="0" 
-      allowfullscreen>
-  </iframe>
-</div>
-<div class="page-content-inner img">
+    <iframe 
+        src="https://www.youtube.com/embed/VNBqKmNATWg?si=gEyGksD5Viunx0OE" 
+        title="YouTube video player" 
+        frameborder="0" 
+        allowfullscreen>
+    </iframe>
+  </div>
+
+  <div class="page-content-inner img">
     <img src="images/Mies 1.png" alt="Installation 1" />
     <img src="images/Mies 2.png" alt="Installation 2" />
     <img src="images/Mies 3.png" alt="Installation 3" />
-</div>
-  </section>
+  </div>
+</section>
 
 </body>
 </html>
