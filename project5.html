@@ -3,32 +3,103 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <title>Deadlocked Phoenix</title>
   <link rel="stylesheet" href="style.css">
   <style>
-    /* Background video fills first screen */
+    /* Main content container */
+    .main-content {
+      position: relative;
+      height: 100vh;
+    }
 
-    .page-content-bright {
+    /* Background video */
+    #bg-video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      object-fit: cover;
+      z-index: -1;
+    }
+
+    /* Bottom right header */
+    .bottom-right-title {
+      position: absolute;
+      bottom: 20px;
+      right: 40px;
+      font-size: 1.6rem;
+      color: white;
+      margin: 0;
+      text-shadow: 2px 2px 3px rgba(0,0,0,0.4);
+      max-width: 90%;
+      word-wrap: break-word;
+      text-align: right;
+    }
+
+    /* Page content */
+    .page-content {
       background: black;
       color: white;
-      padding: 20px;
+      padding: 2rem 1rem;
     }
- /* Mobile adjustments */
+
+    .page-content-inner {
+      max-width: 800px;
+      margin: 0 auto;
+      font-size: 1rem;
+      line-height: 1.5;
+    }
+
+    .page-content-inner img {
+      width: 100%;
+      height: auto;
+      display: block;
+      margin-bottom: 1rem;
+    }
+
+    .video-container {
+      position: relative;
+      padding-bottom: 56.25%; /* 16:9 */
+      height: 0;
+      overflow: hidden;
+      margin: 2rem 0;
+    }
+
+    .video-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    /* Mobile adjustments */
     @media (max-width: 768px) {
       .bottom-right-title {
         font-size: 1.2rem;
+        right: 20px;
+        bottom: 15px;
         text-align: center;
-        position: absolute;
-        bottom: 10px;
-        right: 10px;
+        left: 0;
+        right: 0;
       }
 
       .page-content-inner {
         font-size: 0.95rem;
       }
-   
-    
+    }
+
+    @media (max-width: 480px) {
+      .bottom-right-title {
+        font-size: 1.1rem;
+        bottom: 10px;
+      }
+
+      .page-content-inner {
+        font-size: 0.9rem;
+      }
+    }
   </style>
 </head>
 <body>
@@ -40,17 +111,14 @@
   <section class="main-content">
     <video autoplay muted loop playsinline id="bg-video">
       <source src="Videos/dEADLOCKED pHOENIX.mp4" type="video/mp4">
-      <source src="Videos/dEADLOCKED pHOENIX_mobile.mp4" type="video/mp4" media="(max-width: 768px)">
-
       Your browser does not support the video tag.
     </video>
     <h1 class="bottom-right-title">Deadlocked Phoenix, 2022</h1>
   </section>
 
-  <!-- Content section after scroll -->
- <section class="page-content">
-  <div class="page-content-inner">
-    
+  <!-- Content -->
+  <section class="page-content">
+    <div class="page-content-inner">
       <em>Deadlocked Phoenix</em> is a 9 minute 3D animated video loop created in the context of the 100th anniversary of the 1922 film Nosferatu: A Symphony of Horror. It reinterprets elements of the silent film genre through contemporary 3D animation, combining adapted motifs from the original with newly constructed digital scenes.<br><br>
 
       An unnamed vampire, portrayed as the director of a museum, moves through a hall filled with AI generated Vanitas specimens including skulls, shark teeth, numerous drawings, and an ancient ginkgo tree. He repeatedly descends an endless spiral staircase. In the lobby, towers of unopened letters accumulate. Among them he notices a postcard depicting Arnold Böcklin’s Isle of the Dead. In one scene, he files down his own teeth in an attempt to break the curse of immortality, only for the loop to return him to a moment where another, transhumanist vampire inserts new teeth.<br><br>
@@ -58,22 +126,33 @@
       The film unfolds as an infinite cycle without resolution. Sound by Chickenmilkdotcom combines environmental recordings with subtle foley, binding the vampire’s movements to the stillness of his surroundings.<br><br>
 
       The film was initially created as part of the Goethe Institutes program "Dèad, A set of Teeth" in Silent Green Berlin.
-  </div>
-<div class="video-container">
-  <iframe 
-      src="https://www.youtube.com/embed/3owBTMDKF6Y?si=yncM5FaFEvKngi_7" 
-      title="YouTube video player" 
-      frameborder="0" 
-      allowfullscreen>
-  </iframe>
-</div>
+    </div>
+
+    <div class="video-container">
+      <iframe 
+        src="https://www.youtube.com/embed/3owBTMDKF6Y?si=yncM5FaFEvKngi_7" 
+        title="YouTube video player" 
+        frameborder="0" 
+        allowfullscreen>
+      </iframe>
+    </div>
+
     <div class="page-content-inner">
       <img src="images/photo_2025-07-02_10-29-414k-standard-scale-2_00x.png" alt="Installation 1" />
-      <img src="images/phoen 2.png" alt="Installation 1" />
-      <img src="images/phoen 1.png" alt="Installation 2" />
-      <img src="images/phoen 3.png" alt="Installation 3" />
+      <img src="images/phoen 2.png" alt="Installation 2" />
+      <img src="images/phoen 1.png" alt="Installation 3" />
+      <img src="images/phoen 3.png" alt="Installation 4" />
     </div>
   </section>
+
+  <script>
+    // Swap to mobile video if screen width <= 768px
+    const bgVideo = document.getElementById('bg-video');
+    if (window.innerWidth <= 768) {
+      bgVideo.src = 'Videos/dEADLOCKED pHOENIX_mobile.mp4';
+      bgVideo.load();
+    }
+  </script>
 
 </body>
 </html>
