@@ -22,15 +22,16 @@
   color: #1e1e1e;         /* same grey tone as links */
   margin-bottom: 6px; /* more spacing above the list */
 }
-    #bg-video {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
-      object-fit: cover;
-      z-index: -1;
-    }
+   #bg-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;      /* full viewport width */
+  height: 100vh;     /* full viewport height */
+  object-fit: cover; /* fills the container without stretching */
+  z-index: -1;       /* behind everything */
+  pointer-events: none; /* allows clicks to pass through */
+}
 
     /* Fixed container at bottom right */
     .content-wrapper {
