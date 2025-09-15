@@ -1,119 +1,212 @@
-/* Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&display=swap');
-
-/* Base styles */
 body, html {
   margin: 0;
   padding: 0;
   font-family: "Playfair Display", serif;
-  font-size: 16px;
   color: white;
-  background-color: black;
+  background-color: rgba(255, 255, 255, 0); /* white background for the page content */
   overflow-x: hidden;
   height: 100%;
-  box-sizing: border-box;
 }
 
-/* Bottom-right title / text container */
-.bottom-right-title,
-.text-container,
-.content-wrapper {
-  position: absolute;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  text-align: right;
-  padding-right: 40px;
-  padding-bottom: 40px;
-  max-width: 400px;
-  z-index: 2;
-  color: white;
+@media (max-width: 768px) {
+  body {
+    font-size: 20px;
+  }
 }
 
-/* Text shadow for visibility */
 .bottom-right-title {
+  position: absolute;
+  bottom: 20px;
+  right: 40px;
   font-size: 1.4em;
-  text-shadow: 2px 2px 3px rgba(0,0,0,0.4);
-}
+  color: white;
+  z-index: 2;
+  margin: 0;
+  text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.4);
 
-/* Page content */
-.page-content,
-.page-content-inner,
-.page-content-inner-bright {
-  max-width: 1000px;
-  margin: 0 auto;
-  padding: 0 1rem;
-  line-height: 1.3;
-  color: black;
 }
-
-.page-content-inner img,
-.page-content-inner-bright img,
 .page-content img {
-  width: 100%;
-  height: auto;
-  display: block;
-  margin-bottom: 1rem;
+  max-width: 90%;     /* scale down images to max 90% of their container width */
+  height: auto;       /* keep aspect ratio */
+  display: block;     /* remove inline spacing */
+  margin: 1.5rem auto; /* vertical spacing + center horizontally */
 }
-
-/* Headings */
-.page-content h2,
-.white-heading,
-.black-heading,
-.title {
+.page-content h2 {
   font-family: "Playfair Display", serif;
+ /* or another font you like */
+  font-size: 1.4rem; /* smaller than default */
+  font-weight: 400; /* lighter weight */
+  margin-bottom: 20px;
+  color: #ffffff; /* text color */
+}
+.page-content-dark {
+  background-color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
+  padding: 1rem; /* adds space inside the box */
+  max-width: 800px; /* limits the width of the content */
+  margin: 0 auto; /* centers the box horizontally */
+  line-height: 1.3; /* optional: improves readability */
+}
+.page-content-bright {
+  background-color: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
+  padding: 1rem; /* adds space inside the box */
+  max-width: 800px; /* limits the width of the content */
+  margin: 0 auto; /* centers the box horizontally */
+  line-height: 1.3; /* optional: improves readability */
+}
+/* Full-width black background */
+.page-content {
+  background-color: black;
+  width: 100%; /* full page width */
+  padding: 0rem 0; /* vertical padding */
+}
+
+/* Inner content centered with max width */
+.page-content-inner {
+ max-width: 1000px;       /* maximum width on large screens */
+  margin: 0 auto;          /* centers the container */
+  padding: 0 1rem;         /* horizontal padding inside container */
+  color: rgb(0, 0, 0);
   line-height: 1.3;
+  margin-top: 0;
+  margin-bottom: 2rem;
+  box-sizing: border-box;  /* includes padding in width calculations */
 }
 
-.description {
-  font-size: 1em;
-  line-height: 1.4;
-  color: rgba(255,255,255,0.8);
+.page-content-inner img {
+  width: 100%;      /* fills container width */
+  height: auto;     /* maintains aspect ratio */
+  display: block;   /* removes tiny gaps below images */
+  margin-bottom: 1rem; /* spacing below each image */
+}
+.page-content-inner-bright {
+  max-width: 1000px;       /* maximum width on large screens */
+  margin: 0 auto;          /* centers the container */
+  padding: 0 1rem;         /* horizontal padding inside container */
+  color: rgb(255, 255, 255);
+  line-height: 1.3;
+  margin-top: 0;
+  margin-bottom: 2rem;
+  box-sizing: border-box;  /* includes padding in width calculations */
 }
 
-/* Sticky background video/image */
-.background-container,
-#bg-video,
+/* Make all images inside scale to container width */
+.page-content-inner-bright img {
+  width: 100%;      /* fills container width */
+  height: auto;     /* maintains aspect ratio */
+  display: block;   /* removes tiny gaps below images */
+  margin-bottom: 1rem; /* spacing below each image */
+}
+.white-heading {
+background-color: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
+  padding: 1rem; /* adds space inside the box */
+  max-width: 1250px; /* limits the width of the content */
+  margin: 0 auto; /* centers the box horizontally */
+  line-height: 1.2; /* optional: improves readability */
+}
+
+
+.black-heading {
+ background-color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
+  padding: 1rem; /* adds space inside the box */
+  max-width: 1250px; /* limits the width of the content */
+  margin: 0 auto; /* centers the box horizontally */
+  line-height: 1.3; /* optional: improves readability */
+}
+
+/* Sticky background section container */
+.background-container {
+  position: sticky;
+  top: 0;
+  height: 100vh; /* full viewport height */
+  overflow: hidden;
+  background-color: black; /* fallback background */
+  z-index: -1;
+}
+#bg-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;      /* full viewport width */
+  height: 100vh;     /* full viewport height */
+  object-fit: cover; /* scale and crop to fill viewport */
+  z-index: -1;
+}
+
+
 #bg-image {
   position: absolute;
   top: 0;
   left: 0;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
   z-index: -1;
 }
+.section-title {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+  color: #222;
+  font-weight: 500;
+}
 
-/* Back buttons */
-.back-button,
-.back-button-black {
-  position: fixed;
-  top: 20px;
-  left: 20px;
-  width: 50px;
-  height: 50px;
-  background-size: contain;
-  background-repeat: no-repeat;
+header {
+  font-size: 1rem; /* smaller size */
+  font-weight: 300;
+  letter-spacing: 1.5px;
+  margin-bottom: 30px;
+}
+/* Background image fills the container */
+.background-image {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-size: cover;
   background-position: center;
-  display: block;
-  cursor: pointer;
-  z-index: 10;
+  background-repeat: no-repeat;
+  z-index: -1;
 }
 
-.back-button:hover {
-  background-color: rgba(255,255,255,0.3);
-}
+  .back-button {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      width: 50px;
+      height: 50px;
+      background-image: url('images/Button_white.png');
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+      display: block;
+      cursor: pointer;
+      z-index: 10;
+    }
 
-/* Video container for iframes or embedded videos */
+     .back-button-black {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      width: 50px;
+      height: 50px;
+      background-image: url('images/Button_Black.png');
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+      display: block;
+      cursor: pointer;
+      z-index: 10;
+    }
 .video-container {
   position: relative;
-  width: 60%;
-  max-width: 800px;
-  margin: 0 auto;
-  padding-bottom: 33.75%; /* 16:9 aspect ratio */
+  width: 60%;        /* slightly bigger */
+  max-width: 800px;  /* optional limit for very large screens */
+  margin: 0 auto;    /* centers the container */
+  padding-bottom: 33.75%; /* 16:9 aspect ratio for 60% width */
   height: 0;
 }
-
 .video-container iframe {
   position: absolute;
   top: 0;
@@ -121,8 +214,60 @@ body, html {
   width: 100%;
   height: 100%;
 }
+.content-wrapper {
+  max-width: 320px;
+  text-align: right;
+  font-size: 0.9rem;
+  line-height: 1.4;
+  color: #222;
+  background-color: transparent;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end; /* anchors content at bottom */
+  height: 100%;
+  margin-left: auto;
+}
+.back-button:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+/* Scale only this installation image */
+.installation-pic {
+  width: 30%; /* adjust to your preferred size */
+  height: auto; /* keeps aspect ratio */
+  display: block; /* optional: removes inline spacing */
+  margin: 0 auto; /* centers image */
+}
+/* Main content wraps text and below-page content */
+.main-content {
+  transition: margin-left 0.3s ease;
+  margin-left: 0;
+  
+  display: flex;
+  flex-direction: column;
+  height: 100vh; /* allow full page scroll */
+  padding-left: 40px;
+  box-sizing: border-box;
+  background-color: white;
+  color: black; /* text color for content below sticky bg */
+  min-height: 100vh; /* at least viewport height */
+  position: relative; /* for stacking */
+  z-index: 1; /* above background */
+}
 
-/* Grid layout */
+
+.text-container {
+  margin-top: auto;
+  max-width: 400px;
+  color: white;
+  padding-bottom: 40px;
+  padding-right: 40px; /* optional: adds spacing from right edge */
+  position: relative;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  box-sizing: border-box;
+}
 .grid-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -141,73 +286,48 @@ body, html {
 .grid-item:hover img {
   transform: scale(1.05);
 }
-
-/* Responsive adjustments for tablets and mobile */
-@media (max-width: 768px) {
-  body {
-    font-size: 18px; /* slightly bigger for tablets */
-  }
-
-  .bottom-right-title {
-    font-size: 1.8em;
-    right: 20px;
-    bottom: 20px;
-  }
-
-  .text-container,
-  .content-wrapper {
-    max-width: 90%;
-    padding-right: 20px;
-    padding-bottom: 20px;
-    text-align: right;
-  }
-
-  .page-content h2,
-  .white-heading,
-  .black-heading,
-  .title {
-    font-size: 1.2em;
-  }
-
-  .description {
-    font-size: 1em;
-  }
-
-  .menu {
-    max-height: 45vh;
-    overflow-y: auto;
-    margin-bottom: 12px;
-  }
-
-  /* Mobile video swap */
-  #bg-video {
-    object-fit: cover;
-  }
+.title {
+  font-size: 2em;
+  margin: 0;
 }
 
-@media (max-width: 480px) {
-  body {
-    font-size: 16px;
-  }
+.description {
+  font-size: 1em;
+  line-height: 1.4;
+  margin-top: 8px;
+  color: rgba(255, 255, 255, 0.8);
+}
 
-  .bottom-right-title {
-    font-size: 1.5em;
-    right: 15px;
-    bottom: 15px;
-  }
+/* Page content below sticky background */
+.page-content {
+  padding: 40px;
+  background-color: white;
+  color: black;
+}
 
-  .text-container,
-  .content-wrapper {
-    max-width: 95%;
-    padding-right: 15px;
-    padding-bottom: 15px;
+/* Responsive */
+@media (max-width: 600px) {
+  .text-container {
+    max-width: 90%;
+    padding-bottom: 20px;
   }
+  /* menu area inside wrapper */
+.menu {
+  max-height: 260px; /* visible links */
+  overflow-y: auto;
+  margin-bottom: 12px; /* spacing above contact info */
+}
 
-  .page-content h2,
-  .white-heading,
-  .black-heading,
+/* rest of the content stays unaffected */
+.footer {
+  margin-top: auto;   /* pushes footer to the bottom */
+  padding: 20px;
+  background: #f0f0f0;
+  text-align: center;
+}
+
   .title {
-    font-size: 1em;
+    font-size: 1.5em;
   }
 
   .description {
