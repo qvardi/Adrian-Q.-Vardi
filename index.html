@@ -100,20 +100,11 @@
 
     /* MOBILE RESPONSIVENESS */
     @media screen and (max-width: 768px) {
-      /* Use a smaller video for mobile */
-      #bg-video source {
-        src: Videos/webbgfin_mobile.mp4;
-      }
-
-      #bg-video {
-        object-fit: cover; /* keep full screen */
-      }
-
       .content-wrapper {
         bottom: 15px;
         right: 10px;
         max-width: 90%;
-        font-size: 1rem; /* smaller than before */
+        font-size: 1rem; 
         align-items: flex-end;
         text-align: right;
       }
@@ -184,6 +175,16 @@
       ✉️ <a href="mailto:qvardi@gmail.com">qvardi@gmail.com</a>
     </div>
   </div>
+
+  <!-- JS to switch video for mobile -->
+  <script>
+    const video = document.getElementById('bg-video');
+
+    if (window.innerWidth <= 768) {
+      video.src = 'Videos/webbgfin_mobile.mp4';
+      video.load();
+    }
+  </script>
 
 </body>
 </html>
