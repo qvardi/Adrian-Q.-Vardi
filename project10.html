@@ -6,6 +6,11 @@
 <title>as you wake up in the morning</title>
 <link rel="stylesheet" href="style.css">
 <style>
+  /* Global box-sizing */
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+
   body {
     margin: 0;
     background: black;
@@ -13,15 +18,6 @@
     font-family: Arial, sans-serif;
   }
 
-  /* Back button */
-  .back-button {
-    position: fixed;
-    top: 15px;
-    left: 15px;
-    width: 30px;
-    height: 30px;
-    z-index: 10;
-  }
 
   /* First screen video */
   .main-content {
@@ -68,6 +64,7 @@
     margin-bottom: 20px;
   }
 
+  /* Images */
   .page-content-inner-bright img {
     width: 100%;
     height: auto;
@@ -134,7 +131,7 @@
 
 <!-- Content section -->
 <section class="page-content">
-  <p class="page-content-inner-bright"> 
+  <div class="page-content-inner-bright"> 
     <em>As you wake up in the morning</em> is the result of a dream diary that various artists kept together in a Google Doc during the 2020 Covid pandemic, created to stay in touch with each other during lockdowns and to document the heightened awareness of inner dream states when the outside world was unreachable.<br><br>
 
     Co-produced with artist Haiguang Li, the 10-minute video chronicles two of our dreams in a fairytale fashion, intertwining them through a dialogue. The film blends animation with real-world footage, creating a space where dream and reality coexist. At its core, the video explores the fluidity of bodies, shapeshifting, and traveling through states of being.<br><br>
@@ -147,7 +144,7 @@
     <em>a means to an end, the value of social interaction</em><br>
     in basement.berlin. <br><br>
     Intro:
-  </p>
+  </div>
 
   <!-- Responsive Video -->
   <div class="video-container">
@@ -160,13 +157,13 @@
   </div>
 
   <!-- Images -->
-  <p class="page-content-inner-bright img"> 
+  <div class="page-content-inner-bright img"> 
     <img src="images/as.JPG" alt="Installation 1" />
     <img src="images/as2.JPG" alt="Installation 2" />
     <img src="images/as3.JPG" alt="Installation 3" />
     <img src="images/as4.JPG" alt="Installation 4" />
     <img src="images/as5.JPG" alt="Installation 5" />
-  </p>
+  </div>
 </section>
 
 </body>
