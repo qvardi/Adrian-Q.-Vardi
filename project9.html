@@ -1,77 +1,172 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Der Spieler</title>
-  <link rel="stylesheet" href="style.css">
-  <style>
-  
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Der Spieler</title>
+<link rel="stylesheet" href="style.css">
+<style>
+  /* Main content container */
+  .main-content {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+  }
 
+  /* Background video */
+  #bg-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    z-index: -1;
+  }
 
-    /* White section after video */
-    .page-content {
-      background: rgb(255, 255, 255);
-      color: rgb(255, 255, 255);
-      padding: 0px;
+  /* Bottom right header */
+  .bottom-right-title {
+    position: absolute;
+    bottom: 20px;
+    right: 40px;
+    font-size: 1.4rem;
+    color: white;
+    margin: 0;
+    text-shadow: 2px 2px 3px rgba(0,0,0,0.4);
+    max-width: 90%;
+    word-wrap: break-word;
+    text-align: right;
+  }
+
+  /* Page content */
+  .page-content {
+    margin: 0;
+    padding: 0;
+    background: white;
+    color: black;
+  }
+
+  .page-content-dark {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+    font-size: 1rem;
+    line-height: 1.4;
+    box-sizing: border-box;
+  }
+
+  .page-content-inner-bright img {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin-bottom: 1rem;
+  }
+
+  /* Video container for responsive iframe */
+  .video-container {
+    max-width: 900px;
+    margin: 2rem auto;
+    position: relative;
+    width: 100%;
+    padding-top: 56.25%; /* 16:9 aspect ratio */
+  }
+
+  .video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  /* Mobile adjustments */
+  @media (max-width: 768px) {
+    .bottom-right-title {
+      font-size: 1.2rem;
+      bottom: 15px;
+      right: 20px;
+      text-align: center;
     }
+    .page-content-dark {
+      font-size: 0.95rem;
+      padding: 1.5rem 1rem;
+    }
+  }
 
-
-
-  </style>
+  @media (max-width: 480px) {
+    .bottom-right-title {
+      font-size: 1.1rem;
+      bottom: 10px;
+      right: 10px;
+      text-align: center;
+    }
+    .page-content-dark {
+      font-size: 0.9rem;
+      padding: 1rem 0.5rem;
+    }
+  }
+</style>
 </head>
 <body>
 
-  <!-- Back button -->
-  <a href="index.html" class="back-button-black"></a>
+<!-- Back button -->
+<a href="index.html" class="back-button-black"></a>
 
- <section class="main-content">
-    <video autoplay muted loop playsinline id="bg-video">
-      <source src="Videos/der Spieler.mp4" type="video/mp4">
-      Your browser does not support the video tag.
-    </video>
+<!-- First screen with video -->
+<section class="main-content">
+  <video autoplay muted loop playsinline id="bg-video">
+    <source src="Videos/der Spieler.mp4" type="video/mp4">
+    <source src="Videos/der Spieler_mobile.mp4" type="video/mp4" media="(max-width: 768px)">
+    Your browser does not support the video tag.
+  </video>
   <h1 class="bottom-right-title">Der Spieler, 2019</h1>
 </section>
-  </section>
 
-  <!-- White content section after scroll -->
-  <section class="page-content">
-    <p class="page-content-dark"> 
-   
-   
-  <em>Der Spieler</em> is a 8-minute short film that explores the fate of a video game character who has been granted consciousness.<br>
-After an existence under constant external control, the protagonist begins to test the boundaries of his world.<br>
-The film is told entirely through screencaptures from different existing video games, transforming the “player” into not just one entity, but any playable character.<br>
-<br>
-Endless freedom is suggested to the player, yet the protagonist himself escapes into video games to feel that he does not have to submit to outside constraints.<br>
-Ultimately, he discovers freedom in passivity.<br>
-<br>
-Echoing Bartleby in Herman Melville’s <em>Bartleby, the Scrivener</em>, his stance becomes: “I’d prefer not to.”<br>
-Neither accepting nor refusing, he chooses to step away from the game altogether.<br>
-  </section>
-<div style="display:flex;justify-content:center;width:100%;">
-  <div style="width:60%;padding-top:39.375%;position:relative;">
+<!-- White content section after scroll -->
+<section class="page-content">
+  <div class="page-content-dark"> 
+    <em>Der Spieler</em> is a 8-minute short film that explores the fate of a video game character who has been granted consciousness.<br>
+    After an existence under constant external control, the protagonist begins to test the boundaries of his world.<br>
+    The film is told entirely through screencaptures from different existing video games, transforming the “player” into not just one entity, but any playable character.<br>
+    <br>
+    Endless freedom is suggested to the player, yet the protagonist himself escapes into video games to feel that he does not have to submit to outside constraints.<br>
+    Ultimately, he discovers freedom in passivity.<br>
+    <br>
+    Echoing Bartleby in Herman Melville’s <em>Bartleby, the Scrivener</em>, his stance becomes: “I’d prefer not to.”<br>
+    Neither accepting nor refusing, he chooses to step away from the game altogether.<br>
+  </div>
+
+  <!-- Responsive Vimeo -->
+  <div class="video-container">
     <iframe 
       src="https://player.vimeo.com/video/329327123?badge=0&autopause=0&player_id=0&app_id=58479&title=0&byline=0&portrait=0" 
       frameborder="0" 
       allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" 
       referrerpolicy="strict-origin-when-cross-origin" 
-      style="position:absolute;top:0;left:0;width:100%;height:100%;" 
       title="Der Spieler">
     </iframe>
   </div>
-</div>
+
+  <!-- Installation Images -->
+  <div class="page-content-inner-bright img"> 
+    <img src="images/2025-09-12 16.36.39.jpg" alt="Installation 1"/>
+    <img src="images/2025-09-12 16.36.26.jpg" alt="Installation 2"/>
+    <img src="images/2025-09-12 16.36.30.jpg" alt="Installation 3"/>    
+    <img src="images/2025-09-12 16.36.34.jpg" alt="Installation 4"/>
+    <img src="images/2025-09-12 16.36.17.jpg" alt="Installation 5"/>
+  </div>
+</section>
+
+<script>
+  // Swap to mobile video if screen width <= 768px
+  const bgVideo = document.getElementById('bg-video');
+  if (window.innerWidth <= 768) {
+    bgVideo.src = 'Videos/der spieler_mobile.mp4';
+    bgVideo.load();
+  }
+</script>
 
 <script src="https://player.vimeo.com/api/player.js"></script>
- 
- </p>
-       <p class="page-content-inner-bright img"> 
-    <img src="images/2025-09-12 16.36.39.jpg" alt="Installation 1"/>
-    <img src="images/2025-09-12 16.36.26.jpg" alt="Installation 1"/>
-    <img src="images/2025-09-12 16.36.30.jpg" alt="Installation 1"/>    
-    <img src="images/2025-09-12 16.36.34.jpg" alt="Installation 1"/>
-    <img src="images/2025-09-12 16.36.17.jpg" alt="Installation 1"/>
-
-  </section>
 
 </body>
 </html>
