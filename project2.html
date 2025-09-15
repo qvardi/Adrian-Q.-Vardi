@@ -9,40 +9,57 @@
 <body>
 
   <style>
-/* Base style for header */
+/* Ensure the container is relative for absolute positioning */
+.main-content {
+  position: relative;  /* THIS MAKES ABSOLUTE CHILD STICK TO THIS SECTION */
+  height: 100vh;
+}
+
+/* Bottom right header */
 .bottom-right-title {
   position: absolute;
   bottom: 20px;
   right: 40px;
   font-size: 1.4rem; /* desktop size */
   color: white;
-  z-index: 2;
   margin: 0;
   text-shadow: 2px 2px 3px rgba(0,0,0,0.4);
+  max-width: 90%;    /* prevents overflow */
+  word-wrap: break-word;
+  text-align: right;
 }
 
-/* Make font a bit bigger on tablets and smaller devices */
+/* Tablets / medium screens */
 @media (max-width: 768px) {
   .bottom-right-title {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     right: 20px;
     bottom: 15px;
   }
 }
 
-/* Even smaller devices */
+/* Small phones */
 @media (max-width: 480px) {
   .bottom-right-title {
-    font-size: 2rem;
+    font-size: 1.8rem;
     right: 10px;
     bottom: 10px;
   }
 }
 
-/* Optionally, increase general font size of page content on mobile */
+/* Main content paragraph adjustment */
+.page-content-inner {
+  font-size: 1rem;  /* smaller default size to prevent overflow */
+  max-width: 90%;   /* prevent going off screen on small devices */
+}
 @media (max-width: 768px) {
   .page-content-inner {
     font-size: 1.1rem;
+  }
+}
+@media (max-width: 480px) {
+  .page-content-inner {
+    font-size: 1rem;
   }
 }
 </style>
