@@ -37,11 +37,11 @@
       text-align: right;
     }
 
-    /* Main content paragraph container */
+    /* Page content container */
     .page-content-inner {
-      max-width: 1000px;
-      margin: 0 auto;
-      padding: 0 1rem;
+      max-width: 800px;        /* narrower like Empire of Absence */
+      margin: 0 auto;          /* centers the container */
+      padding: 2rem 1rem;      /* inner spacing */
       font-size: 1rem;
       line-height: 1.4;
       box-sizing: border-box;
@@ -63,8 +63,7 @@
       }
       .page-content-inner {
         font-size: 0.95rem;
-        max-width: 90%;
-        padding: 0 0.5rem;
+        padding: 1.5rem 1rem;
       }
     }
 
@@ -76,8 +75,7 @@
       }
       .page-content-inner {
         font-size: 0.9rem;
-        max-width: 95%;
-        padding: 0 0.5rem;
+        padding: 1rem 0.5rem;
       }
     }
   </style>
@@ -114,7 +112,7 @@
   </section>
 
   <script>
-    // Swap to mobile video if screen width is less than 768px
+    // Swap to mobile video if screen width <= 768px
     const bgVideo = document.getElementById('bg-video');
     if (window.innerWidth <= 768) {
       bgVideo.src = 'Videos/elysian chants_mobile.mp4';
