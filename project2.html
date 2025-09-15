@@ -5,65 +5,59 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Elysian Chants</title>
   <link rel="stylesheet" href="style.css">
+  <style>
+    /* Ensure the container is relative for absolute positioning */
+    .main-content {
+      position: relative;  
+      height: 100vh;
+    }
+
+    /* Bottom right header */
+    .bottom-right-title {
+      position: absolute;
+      bottom: 20px;
+      right: 40px;
+      font-size: 1.4rem; /* desktop size */
+      color: white;
+      margin: 0;
+      text-shadow: 2px 2px 3px rgba(0,0,0,0.4);
+      max-width: 90%;
+      word-wrap: break-word;
+      text-align: right;
+    }
+
+    /* Main content paragraph adjustment */
+    .page-content-inner {
+      font-size: 1rem;
+      max-width: 90%;
+    }
+
+    /* Mobile adjustments */
+    @media (max-width: 768px) {
+      .bottom-right-title {
+        font-size: 1.4rem; /* slightly smaller than before */
+        right: 20px;
+        bottom: 15px;
+      }
+      .page-content-inner {
+        font-size: 1rem; /* slightly smaller */
+      }
+    }
+
+    @media (max-width: 480px) {
+      .bottom-right-title {
+        font-size: 1.5rem; /* slightly smaller than before */
+        right: 10px;
+        bottom: 10px;
+      }
+      .page-content-inner {
+        font-size: 0.95rem; /* slightly smaller */
+      }
+    }
+  </style>
 </head>
 <body>
 
-  <style>
-/* Ensure the container is relative for absolute positioning */
-.main-content {
-  position: relative;  /* THIS MAKES ABSOLUTE CHILD STICK TO THIS SECTION */
-  height: 100vh;
-}
-
-/* Bottom right header */
-.bottom-right-title {
-  position: absolute;
-  bottom: 20px;
-  right: 40px;
-  font-size: 1.4rem; /* desktop size */
-  color: white;
-  margin: 0;
-  text-shadow: 2px 2px 3px rgba(0,0,0,0.4);
-  max-width: 90%;    /* prevents overflow */
-  word-wrap: break-word;
-  text-align: right;
-}
-
-/* Tablets / medium screens */
-@media (max-width: 768px) {
-  .bottom-right-title {
-    font-size: 1.6rem;
-    right: 20px;
-    bottom: 15px;
-  }
-}
-
-/* Small phones */
-@media (max-width: 480px) {
-  .bottom-right-title {
-    font-size: 1.8rem;
-    right: 10px;
-    bottom: 10px;
-  }
-}
-
-/* Main content paragraph adjustment */
-.page-content-inner {
-  font-size: 1rem;  /* smaller default size to prevent overflow */
-  max-width: 90%;   /* prevent going off screen on small devices */
-}
-@media (max-width: 768px) {
-  .page-content-inner {
-    font-size: 1.1rem;
-  }
-}
-@media (max-width: 480px) {
-  .page-content-inner {
-    font-size: 1rem;
-  }
-}
-</style>
-  
   <!-- Back button -->
   <a href="index.html" class="back-button-black"></a>
 
@@ -71,29 +65,25 @@
   <section class="main-content">
     <video autoplay muted loop playsinline id="bg-video">
       <source src="Videos/elysian chants.mp4" type="video/mp4">
+      <source src="Videos/elysian chants_mobile.mp4" type="video/mp4" media="(max-width: 768px)">
       Your browser does not support the video tag.
     </video>
-<h1 class="bottom-right-title">Intermezzo of Elysian Chants, 2025</h1>
-   
+    <h1 class="bottom-right-title">Intermezzo of Elysian Chants, 2025</h1>
   </section>
 
-
   <section class="page-content">
-
     <p class="page-content-inner"> 
-    <em> Intermezzo of Elysian Chants </em> is a 5 minute animated video depicting the European Central Bank transforming into a towering humanoid banker giant. The giant performs a choreography to a chopped and screwed version of "Der Räuber und der Prinz" by DAF, summoning glowing green arrows that shoot upward around him.<br><br>
-A smaller character, an intern, enters and dances to a slowed theme from "Peter and the Wolf". The intern hands the giant an Apple Pencil, which the giant uses to sign in the air. The giant then presses a button on the intern’s chest, revealing a coffee machine built into his back, which the giant operates to make coffee. The giant walks forward but becomes stuck on a piece of gum on the ground.<br><br>
-The entire scene is animated by me with sound created by Amar Halilovic.
+      <em>Intermezzo of Elysian Chants</em> is a 5 minute animated video depicting the European Central Bank transforming into a towering humanoid banker giant. The giant performs a choreography to a chopped and screwed version of "Der Räuber und der Prinz" by DAF, summoning glowing green arrows that shoot upward around him.<br><br>
+      A smaller character, an intern, enters and dances to a slowed theme from "Peter and the Wolf". The intern hands the giant an Apple Pencil, which the giant uses to sign in the air. The giant then presses a button on the intern’s chest, revealing a coffee machine built into his back, which the giant operates to make coffee. The giant walks forward but becomes stuck on a piece of gum on the ground.<br><br>
+      The entire scene is animated by me with sound created by Amar Halilovic.
+    </p>
 
-
-
-  <img src="images/vie2.png" alt="Installation 1" />
-  <img src="images/installationview1.jpg" alt="Installation 2" />
-  <img src="images/vie3.jpeg" alt="Installation 3" />
-  <img src="images/14721.png" alt="Screencapture1" />
-  <img src="images/pen giving.JPG" alt="Screencapture1" />
-</section>
- 
+    <img src="images/vie2.png" alt="Installation 1">
+    <img src="images/installationview1.jpg" alt="Installation 2">
+    <img src="images/vie3.jpeg" alt="Installation 3">
+    <img src="images/14721.png" alt="Screencapture1">
+    <img src="images/pen giving.JPG" alt="Screencapture1">
+  </section>
 
 </body>
 </html>
