@@ -1,124 +1,131 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Elysian Chants</title>
-  <link rel="stylesheet" href="style.css">
-  <style>
-    /* Main content container */
-    .main-content {
-      position: relative;
-      height: 100vh;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Elysian Chants</title>
+<link rel="stylesheet" href="style.css">
+<style>
+  /* Main content container */
+  .main-content {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;  /* ensures no extra space below */
+  }
 
-    /* Background video */
-    #bg-video {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
-      object-fit: cover;
-      z-index: -1;
-    }
+  /* Background video */
+  #bg-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    z-index: -1;
+  }
 
-    /* Bottom right header */
+  /* Bottom right header */
+  .bottom-right-title {
+    position: absolute;
+    bottom: 20px;
+    right: 40px;
+    font-size: 1.4rem;
+    color: white;
+    margin: 0;
+    text-shadow: 2px 2px 3px rgba(0,0,0,0.4);
+    max-width: 90%;
+    word-wrap: break-word;
+    text-align: right;
+  }
+
+  /* Page content container */
+  .page-content-inner {
+    max-width: 900px;       /* slightly bigger than before for images */
+    margin: 0 auto;
+    padding: 1.5rem 1rem;   /* inner spacing */
+    font-size: 1rem;
+    line-height: 1.4;
+    box-sizing: border-box;
+  }
+
+  .page-content-inner img {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin-bottom: 1rem;
+  }
+
+  /* Mobile adjustments */
+  @media (max-width: 768px) {
     .bottom-right-title {
-      position: absolute;
-      bottom: 20px;
-      right: 40px;
-      font-size: 1.4rem;
-      color: white;
-      margin: 0;
-      text-shadow: 2px 2px 3px rgba(0,0,0,0.4);
-      max-width: 90%;
-      word-wrap: break-word;
-      text-align: right;
+      font-size: 1.2rem;
+      right: 20px;
+      bottom: 15px;
     }
-
-    /* Page content container */
     .page-content-inner {
-      max-width: 800px;        /* narrower like Empire of Absence */
-      margin: 0 auto;          /* centers the container */
-      padding: 2rem 1rem;      /* inner spacing */
-      font-size: 1rem;
-      line-height: 1.4;
-      box-sizing: border-box;
+      font-size: 0.95rem;
+      padding: 1rem 1rem;
     }
+  }
 
-    .page-content-inner img {
-      width: 100%;
-      height: auto;
-      display: block;
-      margin-bottom: 1rem;
+  @media (max-width: 480px) {
+    .bottom-right-title {
+      font-size: 1.1rem;
+      right: 10px;
+      bottom: 10px;
     }
+    .page-content-inner {
+      font-size: 0.9rem;
+      padding: 0.8rem 0.5rem;
+    }
+  }
 
-    /* Mobile adjustments */
-    @media (max-width: 768px) {
-      .bottom-right-title {
-        font-size: 1.2rem;
-        right: 20px;
-        bottom: 15px;
-      }
-      .page-content-inner {
-        font-size: 0.95rem;
-        padding: 1.5rem 1rem;
-      }
-    }
-
-    @media (max-width: 480px) {
-      .bottom-right-title {
-        font-size: 1.1rem;
-        right: 10px;
-        bottom: 10px;
-      }
-      .page-content-inner {
-        font-size: 0.9rem;
-        padding: 1rem 0.5rem;
-      }
-    }
-  </style>
+  /* Remove default spacing of page content */
+  .page-content {
+    margin: 0;
+    padding: 0;
+  }
+</style>
 </head>
 <body>
 
-  <!-- Back button -->
-  <a href="index.html" class="back-button-black"></a>
+<!-- Back button -->
+<a href="index.html" class="back-button-black"></a>
 
-  <!-- First screen with video -->
-  <section class="main-content">
-    <video autoplay muted loop playsinline id="bg-video">
-      <source src="Videos/elysian chants.mp4" type="video/mp4">
-      Your browser does not support the video tag.
-    </video>
-    <h1 class="bottom-right-title">Intermezzo of Elysian Chants, 2025</h1>
-  </section>
+<!-- First screen with video -->
+<section class="main-content">
+  <video autoplay muted loop playsinline id="bg-video">
+    <source src="Videos/elysian chants.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+  <h1 class="bottom-right-title">Intermezzo of Elysian Chants, 2025</h1>
+</section>
 
-  <!-- Main content -->
-  <section class="page-content">
-    <div class="page-content-inner">
-   
-        <em>Intermezzo of Elysian Chants</em> is a 5 minute animated video depicting the European Central Bank transforming into a towering humanoid banker giant. The giant performs a choreography to a chopped and screwed version of "Der Räuber und der Prinz" by DAF, summoning glowing green arrows that shoot upward around him.<br><br>
-        A smaller character, an intern, enters and dances to a slowed theme from "Peter and the Wolf". The intern hands the giant an Apple Pencil, which the giant uses to sign in the air. The giant then presses a button on the intern’s chest, revealing a coffee machine built into his back, which the giant operates to make coffee. The giant walks forward but becomes stuck on a piece of gum on the ground.<br><br>
-        The entire scene is animated by me with sound created by Amar Halilovic.
-    
+<!-- Main content -->
+<section class="page-content">
+  <div class="page-content-inner">
+    <p>
+      <em>Intermezzo of Elysian Chants</em> is a 5 minute animated video depicting the European Central Bank transforming into a towering humanoid banker giant. The giant performs a choreography to a chopped and screwed version of "Der Räuber und der Prinz" by DAF, summoning glowing green arrows that shoot upward around him.<br><br>
+      A smaller character, an intern, enters and dances to a slowed theme from "Peter and the Wolf". The intern hands the giant an Apple Pencil, which the giant uses to sign in the air. The giant then presses a button on the intern’s chest, revealing a coffee machine built into his back, which the giant operates to make coffee. The giant walks forward but becomes stuck on a piece of gum on the ground.<br><br>
+      The entire scene is animated by me with sound created by Amar Halilovic.
+    </p>
 
-      <img src="images/vie2.png" alt="Installation 1">
-      <img src="images/installationview1.jpg" alt="Installation 2">
-      <img src="images/vie3.jpeg" alt="Installation 3">
-      <img src="images/14721.png" alt="Screencapture1">
-      <img src="images/pen giving.JPG" alt="Screencapture1">
-    </div>
-  </section>
+    <img src="images/vie2.png" alt="Installation 1">
+    <img src="images/installationview1.jpg" alt="Installation 2">
+    <img src="images/vie3.jpeg" alt="Installation 3">
+    <img src="images/14721.png" alt="Screencapture1">
+    <img src="images/pen giving.JPG" alt="Screencapture1">
+  </div>
+</section>
 
-  <script>
-    // Swap to mobile video if screen width <= 768px
-    const bgVideo = document.getElementById('bg-video');
-    if (window.innerWidth <= 768) {
-      bgVideo.src = 'Videos/elysian chants_mobile.mp4';
-      bgVideo.load();
-    }
-  </script>
+<script>
+  // Swap to mobile video if screen width <= 768px
+  const bgVideo = document.getElementById('bg-video');
+  if (window.innerWidth <= 768) {
+    bgVideo.src = 'Videos/elysian chants_mobile.mp4';
+    bgVideo.load();
+  }
+</script>
 
 </body>
 </html>
