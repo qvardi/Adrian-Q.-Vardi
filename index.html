@@ -98,35 +98,36 @@ ul.project-list li a:focus {
 /* MOBILE RESPONSIVENESS */
 @media screen and (max-width: 768px) {
   #bg-video {
-    object-fit: contain;
+    object-fit: contain; /* scale video properly */
   }
 
   .content-wrapper {
     bottom: 20px;
     right: 10px;
     max-width: 90%;
-    font-size: 1.2rem; /* larger font for mobile */
+    font-size: 1.5rem; /* bigger font for mobile */
     align-items: flex-start;
     text-align: left;
   }
 
-  ul.project-list li a {
-    font-size: 1.2rem;
+  .menu-heading {
+    font-size: 1.8rem; /* bigger heading */
+    margin-bottom: 12px;
   }
 
-  .menu-heading {
-    font-size: 1.4rem;
-    margin-bottom: 10px;
+  ul.project-list li a {
+    font-size: 1.5rem; /* bigger menu links */
   }
 
   .contact-info {
-    font-size: 1.2rem;
+    font-size: 1.5rem; /* bigger contact info */
   }
 
   .menu {
     max-height: 50vh; /* taller scrollable menu on mobile */
   }
 }
+
 </style>
 
 </head>
