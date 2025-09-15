@@ -2,6 +2,8 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>Hello, my name is...</title>
   <link rel="stylesheet" href="style.css">
   <style>
@@ -14,7 +16,27 @@
       padding: 40px;
     }
 
-    
+     @media (max-width: 768px) {
+      .bottom-right-title {
+        font-size: 1.2rem;
+        right: 20px;
+        bottom: 15px;
+      }
+      .page-content-dark {
+        font-size: 0.95rem;
+        padding: 1.5rem 1rem;
+      }
+      .installation-pic {
+        width: 80%;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .bottom-right-title {
+        font-size: 1.1rem;
+        right: 10px;
+        bottom: 10px;
+      }
   </style>
 </head>
 <body>
@@ -26,6 +48,8 @@
   <section class="main-content">
     <video autoplay muted loop playsinline id="bg-video">
       <source src="Videos/hello.mp4" type="video/mp4">
+      <source src="Videos/hello_mobile.mp4" type="video/mp4" media="(max-width: 768px)">
+
       Your browser does not support the video tag.
     </video>
   <h1 class="bottom-right-title">Hello, my name is..., 2021</h1>
