@@ -4,20 +4,29 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Empire of Abscence</title>
+  <title>Empire of Absence</title>
   <link rel="stylesheet" href="style.css">
   <style>
-  .installation-pic {
-    width: 60%;      /* image fills the container width */
-    max-width: 1200px; /* optional: limit maximum width */
-    height: auto;      /* keeps proportions correct */
-    display: block;
-    margin: 20px auto; /* centers image with spacing */
-  }
+    .installation-pic {
+      width: 60%;
+      max-width: 1200px;
+      height: auto;
+      display: block;
+      margin: 20px auto;
+    }
+
+    .page-content-dark {
+      text-align: center; /* centers text */
+      max-width: 800px;   /* keeps nice readable width */
+      margin: 0 auto;
+      padding: 2rem;
+    }
 
     @media (max-width: 768px) {
       .bottom-right-title {
         font-size: 1.2rem;
+        text-align: center;
+        position: absolute;
         right: 20px;
         bottom: 15px;
       }
@@ -51,39 +60,36 @@
   <!-- Back button -->
   <a href="index.html" class="back-button-black"></a>
 
-<section class="main-content">
-  <img src="images/draft.png" alt="Empire of Abscence, 2023" id="bg-image">
-  <h1 class="bottom-right-title">Empire of Absence, 2023</h1>
-</section>
+  <!-- Hero section -->
+  <section class="main-content">
+    <img src="images/draft.png" alt="Empire of Absence, 2023" id="bg-image">
+    <h1 class="bottom-right-title">Empire of Absence, 2023</h1>
   </section>
 
-  <!-- White content section after scroll -->
+  <!-- Text content -->
   <section class="page-content">
-    <p class="page-content-dark"> 
-   
-   
-  <em>Empire of Absence</em> is a proposal for a card game of 40 cards. It places players in the roles of art collectors striving to build a collection of valuable works while evading tax authorities. They do so by storing their acquisitions in Freeports.<br><br>
+    <div class="page-content-dark"> 
+      <em>Empire of Absence</em> is a proposal for a card game of 40 cards. It places players in the roles of art collectors striving to build a collection of valuable works while evading tax authorities. They do so by storing their acquisitions in Freeports.<br><br>
 
-  Freeports are free trade zones with state of the art security and storage facilities, where collectors keep artworks to defer customs duties or taxes until the pieces are sold or transported out of the Freeport. The irony of the game is that once a piece is acquired, the goal is not to show it but to hide it. Winner is the player who, after the final auction, has managed to place the most works into their Freeport.<br><br>
+      Freeports are free trade zones with state of the art security and storage facilities, where collectors keep artworks to defer customs duties or taxes until the pieces are sold or transported out of the Freeport. The irony of the game is that once a piece is acquired, the goal is not to show it but to hide it. Winner is the player who, after the final auction, has managed to place the most works into their Freeport.<br><br>
 
-  This pursuit is frequently interrupted by events that simulate the unpredictable developments of the art market. Whether navigating museum exhibitions, facing scandals, or confronting the specter of theft, players move through a world of ambition, intrigue, and risk. <br><br>
+      This pursuit is frequently interrupted by events that simulate the unpredictable developments of the art market. Whether navigating museum exhibitions, facing scandals, or confronting the specter of theft, players move through a world of ambition, intrigue, and risk.<br><br>
 
+      Demonstration:
+    </div>
 
-    Demonstration:<br>
-  </section>
-
-<div class="video-container">
-  <iframe 
-      src="https://www.youtube.com/embed/Wr2roF6jyWA" 
-      title="YouTube video player" 
-      frameborder="0" 
-      allowfullscreen>
-  </iframe>
-</div>
+    <!-- Video -->
+    <div class="video-container">
+      <iframe 
+          src="https://www.youtube.com/embed/Wr2roF6jyWA" 
+          title="YouTube video player" 
+          frameborder="0" 
+          allowfullscreen>
+      </iframe>
+    </div>
  
- </p>
+    <!-- Installation Image -->
     <img src="images/Screenshot 2025-09-08 at 17.00.18.png" alt="Installation 1" class="installation-pic"/>
-  
   </section>
 
 </body>
