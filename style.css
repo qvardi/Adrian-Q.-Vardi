@@ -9,11 +9,6 @@ body, html {
   height: 100%;
 }
 
-@media (max-width: 768px) {
-  body {
-    font-size: 20px;
-  }
-}
 
 .bottom-right-title {
   position: absolute;
@@ -91,6 +86,19 @@ body, html {
   margin-bottom: 2rem;
   box-sizing: border-box;  /* includes padding in width calculations */
 }
+.image-title {
+  font-size: 0.85rem;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding-left: 4rem; /* nudges text right */
+  color: rgb(255, 255, 255);
+  line-height: 0.8;
+  margin-top: 0;
+  margin-bottom: -1rem; /* moves it closer to image */
+  box-sizing: border-box;
+}
+
+
 
 /* Make all images inside scale to container width */
 .page-content-inner-bright img {
@@ -147,6 +155,18 @@ background-color: rgb(0, 0, 0);
   object-fit: cover;
   z-index: -1;
 }
+#bg-image.vertical {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* keeps entire image visible */
+  object-position: center; /* centers it in the container */
+  z-index: -1;
+  background-color: rgb(255, 255, 255); /* optional: fills empty space around image */
+}
+
 .section-title {
   font-size: 1rem;
   margin-bottom: 0.5rem;

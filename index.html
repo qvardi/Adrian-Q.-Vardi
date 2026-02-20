@@ -2,146 +2,135 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Adrian Q Vardi</title>
   <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
 
   <style>
-    body {
-      margin: 0;
-      font-family: "Playfair Display", sans-serif;
-      background-size: cover;
-      color: #111;
-      height: 100vh;
-      box-sizing: border-box;
-      overflow: hidden;
-    }
+body {
+  margin: 0;
+  font-family: "Playfair Display", sans-serif;
+  background-size: cover;
+  color: #111;
+  height: 100vh;
+  box-sizing: border-box;
+  overflow: hidden;
+}
 
-    .menu-heading {
-      font-size: 0.95rem;
-      font-weight: normal;
-      color: #1e1e1e;
-      margin-bottom: 6px;
-    }
+.menu-heading {
+  font-size: 0.95rem;
+  font-weight: normal;
+  color: #1e1e1e;
+  margin-bottom: 6px;
+}
 
-    #bg-video {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
-      object-fit: cover;
-      z-index: -1;
-      pointer-events: none;
-    }
+#bg-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  z-index: -1;
+  pointer-events: none;
+}
 
-    .content-wrapper {
-      position: fixed;
-      bottom: 40px;
-      right: 60px;
-      max-width: 300px;
-      text-align: right;
-      font-size: 0.9rem;
-      line-height: 1.0;
-      color: #222;
-      display: flex;
-      flex-direction: column;
-      align-items: flex-end;
-    }
+.content-wrapper {
+  position: fixed;
+  bottom: 40px;
+  right: 60px;
+  max-width: 300px;
+  text-align: right;
+  font-size: 0.9rem;
+  line-height: 1.0;
+  color: #222;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
 
-    .menu {
-      max-height: 190px;
-      overflow-y: auto;
-      margin-bottom: 0px;
-      width: 100%;
-    }
+.menu {
+  max-height: 190px;
+  overflow-y: auto;
+  margin-bottom: 0px;
+  width: 100%;
+}
 
-    ul.project-list {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
+ul.project-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
 
-    ul.project-list li {
-      margin-bottom: 3px;
-    }
+ul.project-list li {
+  margin-bottom: 3px;
+}
 
-    ul.project-list li a {
-      text-decoration: none;
-      font-size: 0.9rem;
-      color: #222;
-      border-bottom: 1px solid transparent;
-      transition: border-color 0.25s ease, color 0.25s ease;
-      display: inline-block;
-    }
+ul.project-list li a {
+  text-decoration: none;
+  font-size: 0.9rem;
+  color: #222;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.25s ease, color 0.25s ease;
+  display: inline-block;
+}
 
-    ul.project-list li a:hover,
-    ul.project-list li a:focus {
-      color: #0077cc;
-      border-color: #0077cc;
-      outline: none;
-    }
+ul.project-list li a:hover,
+ul.project-list li a:focus {
+  color: #0077cc;
+  border-color: #0077cc;
+  outline: none;
+}
 
-    .contact-info {
-      font-size: 0.9rem;
-      text-align: right;
-      margin-top: 0px;
-    }
+.contact-info {
+  font-size: 0.9rem;
+  text-align: right;
+  margin-top: 0px;
+}
 
-    .contact-info a {
-      color: #222;
-      text-decoration: none;
-    }
+.contact-info a {
+  color: #222;
+  text-decoration: none;
+}
 
-    .contact-info a:hover {
-      color: #0077cc;
-    }
+.contact-info a:hover {
+  color: #0077cc;
+}
 
-    /* MOBILE RESPONSIVENESS */
-    @media screen and (max-width: 768px) {
-      .content-wrapper {
-        bottom: 15px;
-        right: 10px;
-        max-width: 90%;
-        font-size: 1rem; 
-        align-items: flex-end;
-        text-align: right;
-      }
+/* MOBILE RESPONSIVENESS */
+@media screen and (max-width: 768px) {
+  #bg-video {
+    object-fit: contain;
+  }
 
-      .menu-heading {
-        font-size: 1.2rem;
-        margin-bottom: 8px;
-      }
+  .content-wrapper {
+    bottom: 20px;
+    right: 10px;
+    max-width: 90%;
+    font-size: 1.2rem; /* larger font for mobile */
+    align-items: flex-start;
+    text-align: left;
+  }
 
-      ul.project-list li a {
-        font-size: 1rem;
-      }
+  ul.project-list li a {
+    font-size: 1.2rem;
+  }
 
-      .contact-info {
-        font-size: 1rem;
-      }
+  .menu-heading {
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+  }
 
-      .menu {
-        max-height: 45vh;
-      }
-    }
+  .contact-info {
+    font-size: 1.2rem;
+  }
 
-    @media screen and (max-width: 480px) {
-      .content-wrapper {
-        font-size: 0.95rem;
-      }
-      .menu-heading {
-        font-size: 1.1rem;
-      }
-      ul.project-list li a {
-        font-size: 0.95rem;
-      }
-      .contact-info {
-        font-size: 0.95rem;
-      }
-    }
-  </style>
+  .menu {
+    max-height: 50vh; /* taller scrollable menu on mobile */
+  }
+}
+</style>
+
 </head>
 <body>
 
@@ -153,10 +142,13 @@
 
   <!-- Fixed content at bottom right -->
   <div class="content-wrapper">
-    <div class="menu-heading">Adrian Q. Vardi</div>
+    <!-- Scrollable menu -->
+       <div class="menu-heading">Adrian Q. Vardi</div>
 
     <div class="menu">
+
       <ul class="project-list">
+        <li><a href="Prince.html">My Little Prince Snow White</a></li>
         <li><a href="project1.html">untitled (gesture)</a></li>
         <li><a href="project2.html">Intermezzo of Elysian Chants</a></li>
         <li><a href="project3.html">Empire of Absence</a></li>
@@ -167,24 +159,18 @@
         <li><a href="project8.html">Shaped by you,</a></li>
         <li><a href="project10.html">As you wake up in the morning</a></li>
         <li><a href="project9.html">Der Spieler</a></li>
+
       </ul>
     </div>
 
+    <!-- Bio / contact info pinned below menu -->
     <div class="contact-info">
       <a href="bio.html">Bio</a><br>
       ✉️ <a href="mailto:qvardi@gmail.com">qvardi@gmail.com</a>
     </div>
   </div>
 
-  <!-- JS to switch video for mobile -->
-  <script>
-    const video = document.getElementById('bg-video');
-
-    if (window.innerWidth <= 768) {
-      video.src = 'Videos/webbgfin_mobile.mp4';
-      video.load();
-    }
-  </script>
+ 
 
 </body>
 </html>
